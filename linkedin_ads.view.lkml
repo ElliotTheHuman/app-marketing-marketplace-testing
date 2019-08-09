@@ -3,16 +3,6 @@ include: "//app-marketing-linkedin-ads/*.view"
 include: "//app-marketing-linkedin-ads/*.dashboard"
 include: "//@{CONFIG_PROJECT_NAME}/linkedin_ads_config.view"
 
-view: linkedin_ads {
-  extension: required
-
-  # TODO: Update LinkedIn Ads schema
-  dimension: linkedin_ads_schema {
-    hidden: yes
-    sql:linkedin_ads;;
-  }
-}
-
 explore: li_period_comparison {
   extends: [li_period_comparison_config]
   hidden: no
