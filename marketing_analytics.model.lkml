@@ -12,7 +12,7 @@ include: "//app-marketing-common/*.view"
 # TODO: Add each relevant module
 include: "ad_metrics_base.view"
 include: "adwords.view"
-# include: "facebook_ads.view"
+include: "facebook_ads.view"
 include: "linkedin_ads.view"
 include: "bing_ads.view"
 include: "cross_channel_ad_impressions.view"
