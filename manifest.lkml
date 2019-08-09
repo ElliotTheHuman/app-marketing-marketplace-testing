@@ -6,7 +6,7 @@ constant: CONFIG_PROJECT_NAME {
 }
 
 application: digital-marketing {
-  label: "Production: Digital Marketing"
+  label: "Digital Marketing (MP Ready)"
   definition_file: "application.json"
 }
 
