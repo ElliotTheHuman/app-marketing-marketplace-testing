@@ -1,5 +1,5 @@
 # TODO: Update connection
-connection: "looker_application"
+connection: "@{CONNECTION_NAME}"
 
 # TODO: Update schemas and add each module for cross channel reporting
 datagroup: ama_etl_datagroup {

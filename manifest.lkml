@@ -1,18 +1,62 @@
 project_name: "app-marketing"
 
-constant: CONFIG_PROJECT_NAME {
-  value: "app-marketing-config"
-  export: override_required
-}
-
 application: digital-marketing {
   label: "Digital Marketing (MP Ready)"
   definition_file: "application.json"
 }
 
+################ Constants ################
+
+constant: CONNECTION_NAME {
+  value: "looker_application"
+}
+
+constant: ADWORDS_SCHEMA_NAME {
+  value: "google_ads"
+  export: override_optional # marking these as optional since customer likely has some subset of mktg sources
+}
+
+constant: BING_ADS_SCHEMA_NAME {
+  value: "bings_ads_for_looker"
+  export: override_optional
+}
+
+constant: FACEBOOK_ADS_SCHEMA_NAME {
+  value: "facebook_ads_for_looker"
+  export: override_optional
+}
+
+constant: LINKEDIN_ADS_SCHEMA_NAME {
+  value: "linkedin_ads"
+  export: override_optional
+}
+
+constant: CONFIG_PROJECT_NAME {
+  value: "app-marketing-config"
+  export: override_required
+}
+
+################ Dependencies ################
+
 # Includes accessory files like report descriptions, the application.json file, and artwork for the app
 local_dependency: {
   project: "@{CONFIG_PROJECT_NAME}"
+
+  override_constant: ADWORDS_SCHEMA_NAME {
+    value: "@{ADWORDS_SCHEMA_NAME}"
+  }
+
+  override_constant: BING_ADS_SCHEMA_NAME {
+    value: "@{BING_ADS_SCHEMA_NAME}"
+  }
+
+  override_constant: FACEBOOK_ADS_SCHEMA_NAME {
+    value: "@{FACEBOOK_ADS_SCHEMA_NAME}"
+  }
+
+  override_constant: LINKEDIN_ADS_SCHEMA_NAME {
+    value: "@{LINKEDIN_ADS_SCHEMA_NAME}"
+  }
 }
 
 # Library of common ad metrics definitions and date periods
